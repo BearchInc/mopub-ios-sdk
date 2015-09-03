@@ -73,10 +73,10 @@ static const NSUInteger kMaximumNumberOfAdsPerStream = 255;
         NSUInteger numberOfFixedAds = [desiredOriginalPositions count];
         NSUInteger numberOfRepeatingAds = kMaximumNumberOfAdsPerStream - numberOfFixedAds;
 
-        NSInteger startingIndex = [fixedPositions lastObject] ? [(NSIndexPath *)[fixedPositions lastObject] row] : -1;
+        NSInteger startingIndex = [fixedPositions lastObject] ? [(NSIndexPath *)[fixedPositions lastObject] section] : -1;
         for (NSUInteger repeatingAdIndex = 1; repeatingAdIndex <= numberOfRepeatingAds; repeatingAdIndex++) {
             NSInteger adIndexItem = startingIndex + positioning.repeatingInterval * repeatingAdIndex;
-            [self insertDesiredPositionsForIndexPath:[NSIndexPath indexPathForRow:adIndexItem inSection:lastInsertionSection]];
+            [self insertDesiredPositionsForIndexPath:[NSIndexPath indexPathForRow:1 inSection:adIndexItem]];
         }
     }
 }
