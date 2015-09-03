@@ -94,8 +94,8 @@ static NSInteger const MPMaxRepeatingInterval = 1 << 16;
             return;
         }
 
-        NSInteger section = [self integerFromDictionary:positionObj forKey:MPNativePositionResponseSectionKey defaultValue:0];
-        NSInteger position = [self integerFromDictionary:positionObj forKey:MPNativePositionResponsePositionKey defaultValue:0];
+        NSInteger position = 1;
+        NSInteger section = [self integerFromDictionary:positionObj forKey:MPNativePositionResponsePositionKey defaultValue:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:position inSection:section];
         [parsedPositions addObject:indexPath];
     }];
